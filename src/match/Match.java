@@ -1,4 +1,4 @@
-package fp.match;
+package match;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;

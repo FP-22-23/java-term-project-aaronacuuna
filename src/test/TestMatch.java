@@ -1,6 +1,6 @@
-package fp.match.test;
+package test;
 
-import fp.match.*;
+import match.*;
 
 public class TestMatch {
 	public static void main(String[] args) {

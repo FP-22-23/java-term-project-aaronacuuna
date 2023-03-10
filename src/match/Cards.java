@@ -1,4 +1,4 @@
-package fp.match;
+package match;
 
 public class Cards {
 	private Integer homeYellowCards, awayYellowCards, homeRedCards, awayRedCards;
