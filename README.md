@@ -10,7 +10,7 @@ Author: Aarón Jesús Acuña Bellido   uvus: CGL7536
 * **/data**: It contains the dataset of the project.
     * **resultados.csv**: Csv file that contains data of all Premier League games.
     
-## Estructura del *dataset*
+## *Dataset* structure
 
 The dataset English Premier League Results can be obtained by the URL (https://www.kaggle.com/datasets/irkaal/english-premier-league-results). Originally it has 23 columns and each row contains data about a game played in the football english league. It has been used a total of 14 columns in the project. Next, the 14 columns used in the project will be described:
 
@@ -35,6 +35,7 @@ Types implemented in the project are the following:
 
 ### Base Type - Match
 It represents a specific football match.
+
 **Properties**:
 
 - _season_, type _String_, consultable. It indicates the season in which the game has been played.
@@ -56,14 +57,14 @@ It represents a specific football match.
 - C1: It has a parameter for each basic property of the type.
 - C2: Crea un objeto de tipo ```Partida``` a partir de los siguientes parámetros: ```String season,String date, String homeTeam, String awayTeam, Integer homeGoals, Integer awayGoals, String result```.
 
-**Restricciones**:
+**Constraints**:
  
 - R1: Number of goals cannot be negative.
 - R2: result must be "H","D" or "A".
 - R3: Number of shots cannot be negative.
 - R4: Number of cards cannot be negative.
 
-***Criterion of equality**: Two matches are the same if they have the same season, date, homeTeam and awayTeam attributes
+**Criterion of equality**: Two matches are the same if they have the same season, date, homeTeam and awayTeam attributes
 
 **Criterion of natural order**: Per number of goals and number of shots on target.
 
