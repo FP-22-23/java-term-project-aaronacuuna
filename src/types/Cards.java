@@ -1,4 +1,4 @@
-package match;
+package types;
 
 public class Cards {
 	private Integer homeYellowCards, awayYellowCards, homeRedCards, awayRedCards;
