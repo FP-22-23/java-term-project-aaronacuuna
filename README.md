@@ -51,7 +51,7 @@ It represents a specific football match.
 - _homeShotsTarget_, type _Integer_, consultable. It indicates the number of shots on target of the home team.
 - _awayShotsTarget_, type _Integer_, consultable. It indicates the number of shots on target of the away team.
 - _accuracy_, type _Double_, consultable. Indicates how many goals per shots on target are scored. It is calculated as the number of goals over the number of shots on target.
-- _listRepresentation, type _ArrayList<String>_, consultable. It represents the result of the match as a list. For instance, if we have the following match ```Tottenham vs. QPR, 1993-94, date of the match: 1994-05-07T00:00, result: 1-2```, the list representation of that match will be ```[Tottenham, QPR, QPR]```.
+- _listRepresentation_, type _ArrayList<String>_, consultable. It represents the result of the match as a list. For instance, if we have the following match ```Tottenham vs. QPR, 1993-94, date of the match: 1994-05-07T00:00, result: 1-2```, the list representation of that match will be ```[Tottenham, QPR, QPR]```.
 
 **Constructors**: 
 
