@@ -24,7 +24,7 @@ public class TestMatch {
 		System.out.println(m3.getResult());
 		System.out.println(m1.isHardMatch());
 		System.out.println(m2.getHomeAccuracy());
-
+		System.out.println(m2.toString());
 
 		
 	}
