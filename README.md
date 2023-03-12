@@ -50,7 +50,8 @@ It represents a specific football match.
 - _hardMatch_, type _Boolean_, consultable. If it is true, it indicates that it has been a hard match, meaning that there has been 5 or more yellow cards or two or more red cards in the whole match.
 - _homeShotsTarget_, type _Integer_, consultable. It indicates the number of shots on target of the home team.
 - _awayShotsTarget_, type _Integer_, consultable. It indicates the number of shots on target of the away team.
-- _accuracy_, de tipo _Double_, consultable. Indicates how many goals per shots on target are scored. It is calculated as the number of goals over the number of shots on target.
+- _accuracy_, type _Double_, consultable. Indicates how many goals per shots on target are scored. It is calculated as the number of goals over the number of shots on target.
+- _listRepresentation, type _ArrayList<String>_, consultable. It represents the result of the match as a list. For instance, if we have the following match ```Tottenham vs. QPR, 1993-94, date of the match: 1994-05-07T00:00, result: 1-2```, the list representation of that match will be ```[Tottenham, QPR, QPR]```.
 
 **Constructors**: 
 
