@@ -77,7 +77,7 @@ It represents a specific football match.
 ### Factory - FactoryMatches
 Factory class to make objects of type Matches.
 
-- _Matches readMatches(String filePath)_: it creates an object of type Matches from the information compiled in the csv file, whose path is given as a parameter pf type String. 
+- _Matches readMatches(String filePath)_: it creates an object of type Matches from the information compiled in the csv file, whose path is given as a parameter of type String. 
 
 
 ### Container type - Matches
