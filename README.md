@@ -92,7 +92,7 @@ Container type of the objects of type Match.
 
 - C1: Constructor by default. It creates an object of type Matches without any match stored.
 - C2: Constructor by passing an object of type Collection\<Match\>. It creates an object of type Matches with the matches given in the object of type Collection passed as a parameter. 
-- C3: Constructor by passing an object of type Stream\<Partida\>. It creates an object of type Matches with the matches included in the given Stream.  
+- C3: Constructor by passing an object of type Stream\<Match\>. It creates an object of type Matches with the matches included in the given Stream.  
 
 **Criterion of equality**: they are the same if their attribute matches are the same.
 
