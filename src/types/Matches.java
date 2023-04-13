@@ -43,7 +43,7 @@ public class Matches {
 		matches.remove(m);
 	}
 	
-	public Boolean existsMatchGoals(Integer n) {
+	public Boolean existsMatchMoreNGoals(Integer n) {		// returns true if there exists at least one match with more than n goals
 		Boolean res = false;
 		for (Match m: matches) {
 			if (m.getHomeGoals()+m.getAwayGoals()>=n) {
@@ -54,7 +54,7 @@ public class Matches {
 		return res;
 	}
 	
-	public Boolean forAllCards() {
+	public Boolean forAllCards() {							// returns false if there is at least one match without cards
 		Boolean res = true;
 		for (Match m: matches) {
 			if (m.getCards().getTotalCards()==0) {
@@ -64,7 +64,7 @@ public class Matches {
 		return res;
 	}
 	
-	public Integer countWins(String team) {
+	public Integer countWins(String team) {					// returns the number of wins a team has
 		Integer res = 0;
 		for (Match m: matches) {
 			if(m.getHomeTeam().equals(team) && m.getResult().equals(Result.H)) {
@@ -78,7 +78,7 @@ public class Matches {
 		return res; 
 	}
 	
-	public Integer totalGoalsTeam(String team) {
+	public Integer totalGoalsTeam(String team) {			// returns the number of goals a team has scored along the years
 		Integer res = 0;
 		for (Match m: matches) {
 			if(m.getHomeTeam().equals(team)) {
@@ -92,7 +92,7 @@ public class Matches {
 		return res; 
 	}
 	
-	public Double averageGoalsTeam(String team) {
+	public Double averageGoalsTeam(String team) {			// returns the average of goals per match of the team
 		Double matchesPlayed = 0.0;
 		for (Match m: matches) {
 			if (m.getHomeTeam().equals(team) || m.getAwayTeam().equals(team)) {
@@ -103,17 +103,17 @@ public class Matches {
 	}
 	
 	
-	public Set<Match> filterTeam(String team){
+	public Set<Match> filterTeam(String team){				// return a set of matches of a given team
 		Set<Match> res = new HashSet<Match>();
 		for(Match m: matches) {
-			if(m.getHomeTeam()==team || m.getAwayTeam()==team) {
+			if(m.getHomeTeam().equals(team) || m.getAwayTeam().equals(team)) {
 				res.add(m);
 			}
 		}
 		return res;
 	}
 	
-	public Map<String, List<Match>> mapRefereeMatches(){
+	public Map<String, List<Match>> mapRefereeMatches(){	// returns a map in which the keys correspond to the referees and the values to the matches they have refereed
 		Map<String, List<Match>> mp = new HashMap<String, List<Match>>();
 		for (Match m: matches) {
 			if (!m.getReferee().equals("NA")) {
@@ -129,7 +129,7 @@ public class Matches {
 		return mp;
 	}
 	
-	public Map<String,Integer> mapWinsTeams(){
+	public Map<String,Integer> mapWinsTeams(){				// returns a map in which the keys correspond to the teams and the values to the total number of victories
 		Map<String,Integer> mp = new HashMap<String,Integer>();
 		Set<String> teams = new HashSet<String>();
 		for (Match m: matches) {
