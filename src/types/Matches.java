@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -25,6 +26,24 @@ public class Matches {
 	}
 	public Set<Match> getMatches(){
 		return matches;
+	}
+	
+	public int hashCode() {
+		return Objects.hash(matches);
+	}
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Matches other = (Matches) obj;
+		return Objects.equals(matches, other.matches);
+	}
+	
+	public String toString() {
+		return "Matches [matches=" + matches + "]";
 	}
 	
 	public Integer getNoItems() {
