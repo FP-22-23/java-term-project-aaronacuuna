@@ -42,7 +42,9 @@ public class Cards {
 		else return false;
 	}
 
-
+	public Integer getTotalCards() {
+		return homeYellowCards + awayYellowCards + homeRedCards + awayRedCards;
+	}
 
 	@Override
 	public String toString() {

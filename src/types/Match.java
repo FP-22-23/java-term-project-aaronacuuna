@@ -15,6 +15,7 @@ public class Match implements Comparable<Match>{
 	private String referee;
 	private Integer homeShotsTarget,awayShotsTarget;
 	private boolean hardMatch;
+	private Cards cards;
 	
 	// Constructors with constraints
 	
@@ -23,7 +24,7 @@ public class Match implements Comparable<Match>{
 			Integer homeRedCards, Integer awayRedCards) {
 		
 		Checkers.check("Number of goals cannot be negative.", homeGoals>=0 && awayGoals>=0);
-		Checkers.check("Incorrect format for result.", result=="H"||result=="D"||result=="A");
+		Checkers.check("Incorrect format for result.", result.equals("H")||result.equals("D")||result.equals("A"));
 		Checkers.check("Number of shots cannot be negative.", homeShotsTarget>=0 && awayShotsTarget>=0);
 		Checkers.check("Number of cards cannot be negative.", homeYellowCards>=0 && awayYellowCards>=0 && homeRedCards>=0 && awayRedCards>=0);
 
@@ -33,11 +34,12 @@ public class Match implements Comparable<Match>{
 		this.awayTeam = awayTeam;
 		this.homeGoals = homeGoals;
 		this.awayGoals = awayGoals;
-		this.result = parse_result(result);
+		this.result = Result.valueOf(result);
 		this.referee = referee;
 		this.homeShotsTarget = homeShotsTarget;
 		this.awayShotsTarget = awayShotsTarget;
 		Cards cards = new Cards(homeYellowCards,awayYellowCards,homeRedCards,awayRedCards);
+		this.cards=cards;
 		this.hardMatch = cards.hardMatch();
 	}
 	
@@ -45,17 +47,6 @@ public class Match implements Comparable<Match>{
 		this(season,date,homeTeam,awayTeam,homeGoals,awayGoals,result,"No data",0,0,0,0,0,0);
 	}
 	
-	private Result parse_result(String result) {
-		String res = (String) result;
-		switch (res) {
-		case "H":
-				return Result.HOME_WIN;
-		case "D":
-				return Result.DRAW;
-		default:
-				return Result.AWAY_WIN;
-		}
-	}
 
 	// Getters
 	
@@ -103,6 +94,10 @@ public class Match implements Comparable<Match>{
 		return hardMatch;
 	}
 	
+	public Cards getCards() {
+		return cards;
+	}
+	
 	public Double getHomeAccuracy() {
 		if (getHomeShotsTarget()!=0) {
 			return (double) getHomeGoals()/getHomeShotsTarget();
@@ -139,7 +134,7 @@ public class Match implements Comparable<Match>{
 			return homeTeam + " vs. " + awayTeam + ", "+season+", date of the match: "+date+", result: "+homeGoals+"-"+awayGoals;
 		}
 		else {
-			return homeTeam + " vs. " + awayTeam + ", "+season+", date of the match: "+date+", result: "+homeGoals+"-"+awayGoals+", referee: "+referee
+			return homeTeam + " vs. " + awayTeam + ", "+season+", date of the match: "+date+", result: "+homeGoals+"-"+awayGoals+" -- "+ getResult()+", referee: "+referee
 				+ ", home team shots on target: "+homeShotsTarget+", away team shots on target: "+awayShotsTarget+", home team accuracy: "+
 				String.format("%.3f", getHomeAccuracy())+", away team accuracy: "+String.format("%.3f", getAwayAccuracy())+", hard match? "+hardMatch;
 		}
