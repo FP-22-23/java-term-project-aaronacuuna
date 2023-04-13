@@ -20,8 +20,8 @@ public class Matches {
 	public Matches(Stream<Match> sm) {
 		matches = sm.collect(Collectors.toSet());
 	}
-	public Matches(Set<Match> sm) {
-		matches = sm;
+	public Matches(Collection<Match> sm) {
+		matches = (Set<Match>) sm;
 	}
 	public Set<Match> getMatches(){
 		return matches;
