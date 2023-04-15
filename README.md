@@ -74,3 +74,39 @@ It represents a specific football match.
 - Result, enumerado. It can obtained the following values: HOME_WIN, DRAW and AWAY_WIN.
 - Cards, class. It compiles the information of the number of yellow and red cards both of home team and away team.
 
+### Factory - FactoryMatches
+Factory class to make objects of type Matches.
+
+- _Matches readMatches(String filePath)_: it creates an object of type Matches from the information compiled in the csv file, whose path is given as a parameter of type String. 
+
+
+### Container type - Matches
+
+Container type of the objects of type Match. 
+
+**Properties**:
+
+-  _matches_, of type _Set\<Match\>_, consultable. Set with premier league football matches 
+ 
+**Constructors**: 
+
+- C1: Constructor by default. It creates an object of type Matches without any match stored.
+- C2: Constructor by passing an object of type Collection\<Match\>. It creates an object of type Matches with the matches given in the object of type Collection passed as a parameter. 
+- C3: Constructor by passing an object of type Stream\<Match\>. It creates an object of type Matches with the matches included in the given Stream.  
+
+**Criterion of equality**: they are the same if their attribute matches are the same.
+
+
+**Other methods**:
+- _Integer getNoItems()_: it returns the number of matches.
+- _void addMatch(Match m)_: it adds a football match to the object. 
+- _void addMatches(Collection<Match> m)_: it adds to the object the football matches belonging to the object of type Collection<Match> passed as a parameter.
+- _void deleteMatch(Match m)_: it deletes the match m from the set of matches.
+- _Boolean existsMatchMoreNGoals(Integer n)_: it returns true if there exists at least one match with more than n goals.
+- _Boolean forAllCards()_: it returns false if there is at least one match without cards.
+- _Integer countWins(String team)_: it returns the number of wins a team has along the years.
+- _Integer totalGoalsTeam(String team)_: it returns the number of goals a team has scored along the years.
+- _Double averageGoalsTeam(String team)_: it returns the average of goals per match of the team.
+- _Set<Match> filterTeam(String team)_: it returns a set of matches of a given team.
+- _Map<String, List<Match>> mapRefereeMatches()_: it returns a map in which the keys correspond to the referees and the values to the matches they have refereed.
+- _Map<String,Integer> mapWinsTeams()_: it returns a map in which the keys correspond to the teams and the values to the total number of victories.
