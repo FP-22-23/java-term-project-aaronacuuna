@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 import utils.Checkers;
@@ -30,8 +31,13 @@ public class FactoryMatch {
 	public static Match parseLine(String line) {
 		String[] values = line.split(",");
 		
-		//Integer length = values.length;
-		//Checkers.check("Format line error", length.equals(23));
+		Integer length = values.length;
+		
+		//System.out.println(length);									This two lines were written in order to see with which lines my data file had problems
+		//System.out.println(Arrays.toString(values));
+		
+		Checkers.check("Format line error", length.equals(23));
+		
 		
 		String season = values[0].trim();
 		String date = values[1].trim();

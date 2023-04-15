@@ -11,7 +11,7 @@ public class TestMatches {
 
 	public static void main(String[] args) {
 		
-		Matches mt = FactoryMatch.readMatches("data/results.csv");
+		Matches mt = FactoryMatch.readMatches("data/newResults.csv");
 
 		//testMatches(mt);
 		//testExistsMatchMoreNGoals(mt, 10);
