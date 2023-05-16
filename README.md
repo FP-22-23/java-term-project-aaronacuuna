@@ -51,6 +51,7 @@ It represents a specific football match.
 - _homeShotsTarget_, type _Integer_, consultable. It indicates the number of shots on target of the home team.
 - _awayShotsTarget_, type _Integer_, consultable. It indicates the number of shots on target of the away team.
 - _accuracy_, type _Double_, consultable. Indicates how many goals per shots on target are scored. It is calculated as the number of goals over the number of shots on target.
+- _goals_, type _Integer_, consultable. Number of total goals in the match, ``` goals = homeGoals + awayGoals ```.
 - _listRepresentation_, type _ArrayList<String>_, consultable. It represents the result of the match as a list. For instance, if we have the following match ```Tottenham vs. QPR, 1993-94, date of the match: 1994-05-07T00:00, result: 1-2```, the list representation of that match will be ```[Tottenham, QPR, QPR]```.
 
 **Constructors**: 
@@ -110,3 +111,21 @@ Container type of the objects of type Match.
 - _Set<Match> filterTeam(String team)_: it returns a set of matches of a given team.
 - _Map<String, List<Match>> mapRefereeMatches()_: it returns a map in which the keys correspond to the referees and the values to the matches they have refereed.
 - _Map<String,Integer> mapWinsTeams()_: it returns a map in which the keys correspond to the teams and the values to the total number of victories.
+
+ 
+ **Other methods, but created using the STREAM interface**:
+ - _Boolean existsMatchMoreNGoalsST(Integer n)_: same functionality as the _existsMatchMoreNGoals(Integer n)_ method.
+- _Boolean forAllCardsST()_: same functionality as the _forAllCards()_ method.
+- _Integer countWinsST(String team)_: same functionality as the _countWins(String team)_ method.
+- _Integer totalGoalsTeamST(String team)_:same functionality as the _totalGoalsTeam(String team)_ method.
+- _Double averageGoalsTeamST(String team)_: same functionality as the _averageGoalsTeam(String team)_ method.
+- _Set<Match> filterTeamST(String team)_: same functionality as the _filterTeam(String team)_ method.
+- _Map<String, List<Match>> mapRefereeMatchesST()_: same functionality as the _mapRefereeMatches()_ method.
+- _Map<String,Integer> mapWinsTeamsST()_: same functionality as the _mapWinsTeams()_ method.
+- _Match matchMoreGoalsYear(Integer year)_: it returns the match with more goals given a certain year.
+- _List<Match> matchesMoreGoalsTeam(String team)_: it returns a list with the matches that have been played by a given team. It is sorted by the number of goals per match, from high to low.
+- _Map<Integer, Integer> totalNumberGoalsYear()_: it returns a map which relates the natural years with the toal number of goals scored in that year.
+- _Map<Integer, String> mostVictoriesYear()_: it returns a map in which the keys are the natural years and the values are the team with more victories in that year.
+- _SortedMap<String, List<Match>> nMatchesMoreGoalsSeason(Integer n)_: it returns a SortedMap which relates each season with a list with the n matches with more goals in that season. The SortedMap is sorted from the oldest to the newest season.
+- _String localTeamMoreVictMonth(Integer month)_: it returns the team with more victories playing as the local team in a given month of year.
+ 
