@@ -171,7 +171,7 @@ public class Match implements Comparable<Match>{
 		return res;
 	}
 	
-	private int getGoals() {
+	public int getGoals() {
 		return getHomeGoals()+getAwayGoals();
 	}
 	private int getShots() {
